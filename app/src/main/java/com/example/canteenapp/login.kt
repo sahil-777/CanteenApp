@@ -48,10 +48,10 @@ class LoginActivity : AppCompatActivity() {
                     Log.d(TAG, "signInWithEmail:success")
                     // Toast.makeText(baseContext, "Successful : $email $password", Toast.LENGTH_SHORT).show()
                     val user = auth.currentUser
-                    
+
                 } else {
                     Log.w(TAG, "signInWithEmail:failure", task.exception)
-                    // Toast.makeText(baseContext, "Failed : $email $password", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(baseContext, "Invalid email or password", Toast.LENGTH_SHORT).show()
                 }
             }
         // [END sign_in_with_email]
