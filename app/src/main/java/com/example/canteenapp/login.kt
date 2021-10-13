@@ -2,6 +2,7 @@ package com.example.canteenapp
 // package com.google.firebase.quickstart.auth.kotlin
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
@@ -22,8 +23,16 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.login)
 
         auth = Firebase.auth
+        val currentUser = auth.getCurrentUser();
+        if (currentUser!=null) {
+            Toast.makeText(baseContext,currentUser.uid,Toast.LENGTH_SHORT).show()
+            val I = Intent(this, HomeActivity::class.java)
+            startActivity(I)
+            return
+        }
 
-        // signIn(email,password)
+
+            // signIn(email,password)
 
         val loginButton = findViewById<Button>(R.id.login_btn)
         loginButton.setOnClickListener() {
@@ -46,8 +55,11 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     Log.d(TAG, "signInWithEmail:success")
-                    // Toast.makeText(baseContext, "Successful : $email $password", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(baseContext, "Login successful", Toast.LENGTH_SHORT).show()
                     val user = auth.currentUser
+
+                    val I = Intent(this, HomeActivity::class.java)
+                    startActivity(I)
 
                 } else {
                     Log.w(TAG, "signInWithEmail:failure", task.exception)
