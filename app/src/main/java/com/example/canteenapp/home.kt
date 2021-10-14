@@ -12,6 +12,7 @@ import com.google.firebase.auth.*
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import android.content.Intent
+import android.view.View
 
 class HomeActivity : AppCompatActivity() {
     private
@@ -22,6 +23,39 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.home)
 
         auth = Firebase.auth
-        Toast.makeText(baseContext, "Home page", Toast.LENGTH_SHORT).show()
+
+        // Toast.makeText(baseContext, "Home page", Toast.LENGTH_SHORT).show()
+
+        val addButton = findViewById<Button>(R.id.friedRiceAdd)
+        addButton.setOnClickListener() {
+            var viewQuantity = findViewById<TextView>(R.id.friedRiceQuantity)
+            var cartTotalItems = findViewById<TextView>(R.id.cart)
+            var num=viewQuantity.text.toString().toInt()
+            var cartNum = cartTotalItems.text.toString().toInt()
+
+            if(num<4){
+                num++;
+                cartNum++;
+            }
+            // Toast.makeText(baseContext, "$num", Toast.LENGTH_SHORT).show()
+            viewQuantity.text=num.toString()
+            cartTotalItems.text=cartNum.toString()
+        }
+
+        val removeButton = findViewById<Button>(R.id.friedRiceRemove)
+        removeButton.setOnClickListener() {
+            var viewQuantity = findViewById<TextView>(R.id.friedRiceQuantity)
+            var cartTotalItems = findViewById<TextView>(R.id.cart)
+            var num=viewQuantity.text.toString().toInt()
+            var cartNum = cartTotalItems.text.toString().toInt()
+
+            if(num>0){
+                num--;
+                cartNum--;
+            }
+            // Toast.makeText(baseContext, "$num", Toast.LENGTH_SHORT).show()
+            viewQuantity.text=num.toString()
+            cartTotalItems.text=cartNum.toString()
+        }
     }
 }
