@@ -1,143 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/orderPage"
-        android:layout_width="340dp"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="1dp"
-        android:text="  ITEM LIST"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp" />
-
-    <Button
-        android:id="@+id/cart"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginStart="1dp"
-        android:text="0"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/orderPage"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <ScrollView
-        android:id="@+id/scrollView2"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+    
+    <LinearLayout
+        android:background="#E7E7E7"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:id="@+id/panel"
+        android:weightSum="16"
+        android:orientation="horizontal">
+        
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_gravity="start|center_vertical"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            />
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="11"
+            android:text="Food Item List"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
 
-                <TextView
-                    android:id="@+id/friedRiceText"
-                    android:layout_width="220dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Fried Rice (Rs.70)"
-                    android:gravity="center"
-                    android:textSize="25sp" />
+        <FrameLayout
+            android:id="@+id/btnCart"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
 
-                <Button
-                    android:id="@+id/friedRiceAdd"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="+"
-                    android:onClick="addItem"
-                    android:gravity="center"
-                    android:textSize="25sp" />
+            <ImageView
+                android:id="@+id/cartButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_baseline_fastfood_24"
+                />
 
-                <TextView
-                    android:id="@+id/friedRiceQuantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:gravity="center"
-                    android:textStyle="bold" />
+            <com.nex3z.notificationbadge.NotificationBadge
+                android:id="@+id/badge"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_toRightOf="@+id/cartButton"
+                android:layout_alignTop="@+id/cartButton"
+                android:layout_marginLeft="10dp"
+                app:nbMaxTextLength="2"/>
 
-                <Button
-                    android:id="@+id/friedRiceRemove"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="-"
-                    android:onClick="removeItem"
-                    android:gravity="center"
-                    android:textSize="25sp" />
+        </FrameLayout>
 
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    </LinearLayout>
 
-                <TextView
-                    android:id="@+id/biryaniText"
-                    android:layout_width="220dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Biryani (Rs.100)"
-                    android:gravity="center"
-                    android:textSize="25sp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_item"
+        android:padding="8dp"
+        android:layout_below="@id/panel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
-                <Button
-                    android:id="@+id/biryaniAdd"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="+"
-                    android:onClick="addItem"
-                    android:gravity="center"
-                    android:textSize="25sp" />
-
-                <TextView
-                    android:id="@+id/biryaniQuantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="0"
-                    android:textSize="20sp"
-                    android:gravity="center"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/biryaniRemove"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="-"
-                    android:onClick="removeItem"
-                    android:gravity="center"
-                    android:textSize="25sp" />
-
-            </TableRow>
-
-        </LinearLayout>
-    </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
