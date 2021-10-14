@@ -24,12 +24,12 @@ class LoginActivity : AppCompatActivity() {
 
         auth = Firebase.auth
         val currentUser = auth.getCurrentUser();
-        if (currentUser!=null) {
-            Toast.makeText(baseContext,currentUser.uid,Toast.LENGTH_SHORT).show()
-            val I = Intent(this, HomeActivity::class.java)
-            startActivity(I)
-            return
-        }
+//        if (currentUser!=null) {
+//            Toast.makeText(baseContext,currentUser.uid,Toast.LENGTH_SHORT).show()
+//            val I = Intent(this, HomeActivity::class.java)
+//            startActivity(I)
+//            return
+//        }
 
 
             // signIn(email,password)
