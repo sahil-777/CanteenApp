@@ -17,8 +17,9 @@ import com.example.canteenapp.adapter.MyItemAdapter
 import com.example.canteenapp.listener.ItemLoadListener
 import com.example.canteenapp.model.ItemModel
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.home.*
 
-class HomeActivity : AppCompatActivity(), ItemLoadListener {
+class MainActivity : AppCompatActivity(), ItemLoadListener {
     private lateinit var auth: FirebaseAuth
     private  lateinit var itemLoadListener: ItemLoadListener
 
@@ -47,8 +48,12 @@ class HomeActivity : AppCompatActivity(), ItemLoadListener {
                         itemLoadListener.onItemLoadSuccess(itemModels)
                     }
                     else{
-                       itemLoadListener.onItemLoadFailed("Item does not exist")
+                        itemLoadListener.onItemLoadFailed("Item does not exist")
                     }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    itemLoadListener.onItemLoadFailed(error.message)
                 }
             })
     }
@@ -58,12 +63,12 @@ class HomeActivity : AppCompatActivity(), ItemLoadListener {
     }
 
     override fun onItemLoadSuccess(itemModelList: List<ItemModel>?) {
-        var adapter = MyItemAdapter(this,itemModelList!!)
+        val adapter = MyItemAdapter(this,itemModelList!!)
         recycler_item.adapter = adapter
     }
 
     override fun onItemLoadFailed(message: String?) {
-        Snackbar.make(home,message!!,Snackbar.LENGTH_LONG).show()
+        Snackbar.make(homeLayout,message!!,Snackbar.LENGTH_LONG).show()
     }
 
 }

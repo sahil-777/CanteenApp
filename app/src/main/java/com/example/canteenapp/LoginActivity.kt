@@ -58,7 +58,7 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(baseContext, "Login successful", Toast.LENGTH_SHORT).show()
                     val user = auth.currentUser
 
-                    val I = Intent(this, HomeActivity::class.java)
+                    val I = Intent(this, MainActivity::class.java)
                     startActivity(I)
 
                 } else {

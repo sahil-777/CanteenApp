@@ -5,8 +5,8 @@
     android:id="@+id/homeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
-    
+    tools:context=".MainActivity">
+
     <LinearLayout
         android:background="#E7E7E7"
         android:layout_width="match_parent"
