@@ -3,9 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/SAHIL/Desktop/CanteenApp/app/src/main/res/drawable/badge_shape.xml" value="0.2703125" />
+        <entry key="..\:/Users/SAHIL/Desktop/CanteenApp/app/src/main/res/font-v26/open_sans.xml" value="0.284375" />
+        <entry key="..\:/Users/SAHIL/Desktop/CanteenApp/app/src/main/res/font/open_sans.xml" value="0.284375" />
         <entry key="..\:/Users/SAHIL/Desktop/CanteenApp/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/SAHIL/Desktop/CanteenApp/app/src/main/res/layout/cart_action_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/SAHIL/Desktop/CanteenApp/app/src/main/res/layout/cart_row.xml" value="0.47104247104247104" />
+        <entry key="..\:/Users/SAHIL/Desktop/CanteenApp/app/src/main/res/layout/fragment_cart.xml" value="0.25" />
         <entry key="..\:/Users/SAHIL/Desktop/CanteenApp/app/src/main/res/layout/fragment_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/SAHIL/Desktop/CanteenApp/app/src/main/res/layout/fragment_item_detail.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/SAHIL/Desktop/CanteenApp/app/src/main/res/layout/fragment_order.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/SAHIL/Desktop/CanteenApp/app/src/main/res/layout/item_row.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/SAHIL/Desktop/CanteenApp/app/src/main/res/menu/main_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
