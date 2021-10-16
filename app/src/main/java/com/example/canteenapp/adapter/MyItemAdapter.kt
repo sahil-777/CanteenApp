@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.canteenapp.R
@@ -13,7 +14,7 @@ import com.example.canteenapp.model.ItemModel
 import java.lang.StringBuilder
 
 
-class MyItemAdapter (
+public class MyItemAdapter(
     private val context: Context,
     private val list:List<ItemModel>
     ): RecyclerView.Adapter<MyItemAdapter.MyItemViewHolder>(){
@@ -44,6 +45,7 @@ class MyItemAdapter (
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        //TODO("Not yet implemented")
+        //return list.size;
     }
 }

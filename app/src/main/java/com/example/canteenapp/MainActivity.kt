@@ -13,11 +13,15 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import android.content.Intent
 import android.view.View
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.canteenapp.adapter.MyItemAdapter
 import com.example.canteenapp.listener.ItemLoadListener
 import com.example.canteenapp.model.ItemModel
+import com.example.canteenapp.utils.SpaceItemDecoration
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.home.*
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity(), ItemLoadListener {
     private lateinit var auth: FirebaseAuth
@@ -29,7 +33,7 @@ class MainActivity : AppCompatActivity(), ItemLoadListener {
 
         auth = Firebase.auth
 
-        init()
+        //init()
         loadItemFromFirebase()
 
     }
@@ -43,9 +47,11 @@ class MainActivity : AppCompatActivity(), ItemLoadListener {
                         for(itemSnapshot in snapshot.children){
                             val itemModel = itemSnapshot.getValue(ItemModel::class.java)
                             itemModel!!.key = itemSnapshot.key
+                            //Toast.makeText(baseContext, "Item ${itemSnapshot.key}", Toast.LENGTH_SHORT).show()
                             itemModels.add(itemModel)
                         }
-                        itemLoadListener.onItemLoadSuccess(itemModels)
+                        //itemLoadListener.onItemLoadSuccess(itemModels)
+                        itemLoadListener.onItemLoadFailed("working")
                     }
                     else{
                         itemLoadListener.onItemLoadFailed("Item does not exist")
@@ -60,15 +66,19 @@ class MainActivity : AppCompatActivity(), ItemLoadListener {
 
     private fun init(){
         itemLoadListener = this
+
+        val gridLayoutManager = GridLayoutManager(this,2)
+        recycler_item.layoutManager = gridLayoutManager
+        recycler_item.addItemDecoration(SpaceItemDecoration())
     }
 
     override fun onItemLoadSuccess(itemModelList: List<ItemModel>?) {
-        val adapter = MyItemAdapter(this,itemModelList!!)
+        var adapter = MyItemAdapter(this,itemModelList!!)
         recycler_item.adapter = adapter
     }
 
     override fun onItemLoadFailed(message: String?) {
-        Snackbar.make(homeLayout,message!!,Snackbar.LENGTH_LONG).show()
+        Snackbar.make(mainLayout,message!!,Snackbar.LENGTH_LONG).show()
     }
 
 }
