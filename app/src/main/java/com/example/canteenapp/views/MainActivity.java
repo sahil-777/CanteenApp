@@ -1,8 +1,10 @@
-package com.example.canteenapp;
+package com.example.canteenapp.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.canteenapp.R;
 
 // import com.google.firebase.database.DatabaseReference;
 // import com.google.firebase.database.FirebaseDatabase;
