@@ -1,2 +1,1 @@
-# canteen-app
-Android application to place orders in College canteen
+# Shopping cart application MVVM architecture
