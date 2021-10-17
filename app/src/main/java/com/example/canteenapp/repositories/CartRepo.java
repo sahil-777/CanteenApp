@@ -32,7 +32,7 @@ public class CartRepo {
         }
         List<CartItem> cartItemList = new ArrayList<>(mutableCart.getValue());
         for (CartItem cartItem: cartItemList) {
-            if (cartItem.getProduct().getId().equals(item.getId())) {
+            if (cartItem.getItem().getId().equals(item.getId())) {
                 if (cartItem.getQuantity() == 5) {
                     return false;
                 }
@@ -68,7 +68,7 @@ public class CartRepo {
 
         List<CartItem> cartItemList = new ArrayList<>(mutableCart.getValue());
 
-        CartItem updatedItem = new CartItem(cartItem.getProduct(), quantity);
+        CartItem updatedItem = new CartItem(cartItem.getItem(), quantity);
         cartItemList.set(cartItemList.indexOf(cartItem), updatedItem);
 
         mutableCart.setValue(cartItemList);
@@ -80,7 +80,7 @@ public class CartRepo {
         double total = 0.0;
         List<CartItem> cartItemList = mutableCart.getValue();
         for (CartItem cartItem: cartItemList) {
-            total += cartItem.getProduct().getPrice() * cartItem.getQuantity();
+            total += cartItem.getItem().getPrice() * cartItem.getQuantity();
         }
         mutableTotalPrice.setValue(total);
     }

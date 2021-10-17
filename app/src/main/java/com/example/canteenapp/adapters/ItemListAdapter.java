@@ -26,14 +26,14 @@ public class ItemListAdapter extends ListAdapter<Item, ItemListAdapter.ItemViewH
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         ItemRowBinding itemRowBinding = ItemRowBinding.inflate(layoutInflater, parent, false);
-        itemRowBinding.setShopInterface(itemInterface);
+        itemRowBinding.setItemInterface(itemInterface);
         return new ItemViewHolder(itemRowBinding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         Item item = getItem(position);
-        holder.itemRowBinding.setProduct(item);
+        holder.itemRowBinding.setItem(item);
         holder.itemRowBinding.executePendingBindings();
     }
 

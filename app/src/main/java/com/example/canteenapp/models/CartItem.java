@@ -18,7 +18,7 @@ public class CartItem {
         this.quantity = quantity;
     }
 
-    public Item getProduct() {
+    public Item getItem() {
         return item;
     }
 
@@ -48,7 +48,7 @@ public class CartItem {
         if (o == null || getClass() != o.getClass()) return false;
         CartItem cartItem = (CartItem) o;
         return getQuantity() == cartItem.getQuantity() &&
-                getProduct().equals(cartItem.getProduct());
+                getItem().equals(cartItem.getItem());
     }
 
     @BindingAdapter("android:setVal")
