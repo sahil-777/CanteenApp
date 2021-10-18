@@ -52,7 +52,7 @@
                 android:id="@+id/priceTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{String.valueOf(shopViewModel.product.price) + `$` }"
+                android:text="@{`₹ `+String.valueOf(shopViewModel.product.price)}"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
 
             <Space
