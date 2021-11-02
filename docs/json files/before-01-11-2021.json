@@ -1,0 +1,98 @@
+{
+  "Admin" : {
+    "availableItems" : {
+      "01" : {
+        "image" : "https://recipesofhome.com/wp-content/uploads/2020/06/veg-fried-rice-recipe.jpg",
+        "isAvailable" : true,
+        "name" : "Fried Rice",
+        "price" : "70"
+      },
+      "02" : {
+        "image" : "https://storage.googleapis.com/prod-media-makingchef/acae8e65-88bf-420b-8024-a5b820939b5d/4efdc5d9-ae6e-499d-b97d-6d129fdd5507.jpg",
+        "isAvailable" : true,
+        "name" : "Schezwan Fried Rice",
+        "price" : "80"
+      },
+      "03" : {
+        "image" : "https://i1.wp.com/cookingfromheart.com/wp-content/uploads/2017/09/Veg-Biryani-in-Pressure-Cooker-6.jpg?resize=720%2C480&ssl=1",
+        "isAvailable" : true,
+        "name" : "Biryani",
+        "price" : "100"
+      },
+      "04" : {
+        "image" : "https://i.ytimg.com/vi/BVcTuvoxpMY/maxresdefault.jpg",
+        "isAvailable" : true,
+        "name" : "Vadapav",
+        "price" : "10"
+      },
+      "05" : {
+        "image" : "https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2021/05/samosa-1622294808.jpg",
+        "isAvailable" : true,
+        "name" : "Samosa",
+        "price" : "10"
+      },
+      "06" : {
+        "image" : "https://i.imgur.com/MXkPVx0.jpeg",
+        "isAvailable" : true,
+        "name" : "Thali",
+        "price" : "100"
+      },
+      "07" : {
+        "image" : "https://static.toiimg.com/photo/52416693.cms",
+        "isAvailable" : true,
+        "name" : "Pav Bhaji",
+        "price" : "90"
+      },
+      "08" : {
+        "image" : "https://st1.thehealthsite.com/wp-content/uploads/2019/07/Fruit-juices.jpg?impolicy=Medium_Widthonly&w=710",
+        "isAvailable" : true,
+        "name" : "Fruit Juice",
+        "price" : "50"
+      }
+    },
+    "details" : {
+      "email" : "admin@canteenapp.com",
+      "password" : "ssssssss"
+    }
+  },
+  "Orders" : {
+    "UID1" : {
+      "orderID1" : {
+        "isFinished" : false,
+        "items" : {
+          "1" : 2,
+          "4" : 1
+        }
+      },
+      "orderID2" : {
+        "isFinished" : false,
+        "items" : {
+          "7" : 2,
+          "4" : 4,
+          "productID" : "quantity"
+        }
+      }
+    },
+    "UID2" : {
+      "orderID1" : {
+        "isFinished" : false,
+        "items" : {
+          "3" : 2,
+          "5" : 2
+        }
+      } 
+    }
+  },
+  "Users" : {
+    "UID1" : {
+      "details" : {
+        "name" : "Sample Name"
+      }
+    },
+    "UID2" : {
+      "Details" : {
+        "Name" : "Sample Name"
+      }
+    }
+  }
+}
